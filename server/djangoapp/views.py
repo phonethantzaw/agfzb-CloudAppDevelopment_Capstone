@@ -52,3 +52,13 @@ def get_dealerships(request):
 # def add_review(request, dealer_id):
 # ...
 
+from django.shortcuts import render
+
+
+# Create your views here.
+def about(request):
+    return render(request, 'djangoapp/about.html')
+
+
+def contact(request):
+    return render(request, 'djangoapp/contact.html')
