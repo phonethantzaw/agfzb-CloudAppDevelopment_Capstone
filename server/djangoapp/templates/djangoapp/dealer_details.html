@@ -57,6 +57,17 @@
         </div>
     </nav>
     <!-- Add reviews as cards -->
+    {% if reviews %}
+        <div class="container">
+            <ul class="list-group">
+                {% for review in reviews %}
+                    <li class="list-group-item">{{ review.review }} ({{ review.sentiment }})</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <a class="btn btn-primary" href="{% url 'djangoapp:add_review' dealer_id %}">Add Review</a>
 
     </body>
 

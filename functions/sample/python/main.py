@@ -24,7 +24,7 @@ def main(param_dict):
             api_key=param_dict["IAM_API_KEY"],
             connect=True,
         )
-        print(f"Databases: {client.all_dbs()}")
+        print("Databases: {client.all_dbs()}")
     except CloudantException as cloudant_exception:
         print("unable to connect")
         return {"error": cloudant_exception}
@@ -33,3 +33,5 @@ def main(param_dict):
         return {"error": err}
 
     return {"dbs": client.all_dbs()}
+
+
